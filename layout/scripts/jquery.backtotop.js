@@ -54,5 +54,61 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(section => {
         section.classList.add('visible');
     });
+
 });
 
+//Mensaje 
+const btn = document.getElementById('button');
+
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const name = document.getElementById('from_name').value;
+    const message = document.getElementById('message').value;
+    const email = document.getElementById('email').value;
+    const fileInput = document.getElementById('cv');
+    const file = fileInput.files.length > 0 ? fileInput.files[0] : null;
+
+    if (!file) {
+        sendEmail(null); 
+    } else {
+        alert("Archivo seleccionado, enviando...");
+        const reader = new FileReader();
+        reader.onload = function () {
+            const base64File = reader.result.split(',')[1]; 
+            sendEmail(base64File);
+        };
+
+        reader.onerror = function () {
+            alert('Error al leer el archivo. Por favor, intenta nuevamente.');
+        };
+
+        reader.readAsDataURL(file); 
+    }
+});
+
+function sendEmail(fileData) {
+    const formData = {
+        from_name: document.getElementById('from_name').value,
+        message: document.getElementById('message').value,
+        email: document.getElementById('email').value,
+        cv: fileData, 
+    };
+
+    const serviceID = 'default_service';
+   const templateID = 'template_rn8wqjl';
+    
+    emailjs.sendForm(serviceID, templateID, document.getElementById('form'))
+        .then(() => {
+            btn.value = 'Enviar Correo';
+            alert('Correo enviado correctamente.');
+            document.getElementById('form').reset(); // Limpiar formulario después de enviar
+        })
+        .catch((err) => {
+            btn.value = 'Enviar Correo';
+            alert('Hubo un error al enviar el correo. Intenta nuevamente.');
+            console.error('Error:', err);
+        });
+    }    
