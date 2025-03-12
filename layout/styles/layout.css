@@ -28,7 +28,14 @@ File: Layout CSS
 
 #header #logo{margin:22px 0 0 0;}
 
-
+/* Estilo para el texto de la descripción */
+.Descripcion {
+    color: #ffffff; /* Blanco puro */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+  }
+  
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
 #pageintro{padding:200px 0 280px;}/* 280px => 80px for #introblocks negative margin */
@@ -330,7 +337,27 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
 
 .logoname a{color:#FFFFFF;}
-.logoname::first-letter, .logoname span{color:#97BDAB;}
+.logoname::first-letter, .logoname span{color:#50bcd9;}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  #logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #logo img:hover {
+    transform: scale(1.1);
+  }
+  
 
 
 /* Rows */
@@ -343,8 +370,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .coloured{color:#FFFFFF; background-color:#97A9BD;}
 
 
-/* Header */
-#header #logo a{color:inherit;}
+
 
 
 /* Page Intro */
@@ -1194,3 +1220,122 @@ img {
     }
   }
   
+   /* Estilo para las tarjetas */
+   .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  .team-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .team-card:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Botones del carrusel más pequeños */
+  .small-btn {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .custom-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+
+  /* Estilo de las tarjetas */
+.testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Efecto de elevación y escala al pasar el mouse */
+  .testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Efecto sutil de luz en el fondo al pasar el mouse */
+  .testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-out;
+  }
+  
+  /* Se activa cuando pasas el mouse */
+  .testimonial-card:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Imagen de los clientes */
+  .testimonial-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff; /* Borde sutil para destacar */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Efecto al pasar el cursor sobre la imagen */
+  .testimonial-card:hover .testimonial-img img {
+    border-color: #0056b3;
+  }
+  
+  /* Cita estilizada */
+  p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    font-style: italic;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Cambia el color de la cita al pasar el mouse */
+  .testimonial-card:hover p {
+    color: #222;
+  }
+  
+
+/**/
+/* Contenedor principal de cada gráfico */
+.pr-chart {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Texto dentro del círculo (porcentaje) */
+  .pr-chart span {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+  }
