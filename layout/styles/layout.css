@@ -933,292 +933,176 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Oficionas */
+/* Estilo para el título */
+.TituloUBI {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
+/* Contenedor de la ubicación */
 .container-fluid {
-    font-family: 'Arial', sans-serif;
-    position: relative;
+  padding: 50px 15px;
 }
 
-.position-relative {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-left: 15%;  
+/* Ajustes para la disposición del contenido */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+  align-items: center;
+  justify-content: center;
 }
 
+/* Imagen */
+.d-flex img {
+  width: 300px; /* Tamaño estándar */
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+/* Contenido de texto */
 .overlay-text {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    max-width: 450px;
-    margin-left: -150px;
-    z-index: 2;
+  max-width: 600px;
 }
 
 .overlay-text h6 {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    background-color: #ff6f61;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
+  font-size: 1.2rem;
+  color: #79C9D8; /* Celeste */
+  font-weight: bold;
 }
 
 .overlay-text h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff; /* Azul oscuro */
 }
 
 .overlay-text p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666666;
-    margin-bottom: 20px;
+  font-size: 1rem;
+  color: #79C9D8; /* Gris azulado */
+  line-height: 1.6;
 }
 
 .overlay-text ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 .overlay-text ul li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333333;
+  font-size: 1rem;
+  color: #ffffff; /* Gris azulado */
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .overlay-text ul li i {
-    color: #ff6f61;
-    margin-right: 10px;
+  margin-right: 10px;
+  color: #ffffff; /* Azul oscuro */
 }
 
+/* Botón estilizado */
 .btn-primary {
-    background-color: #ff6f61;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #013E51; /* Azul oscuro */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #e65a4f;
-    text-decoration: none;
-    color: #ffffff;
+  background-color: #03171a; /* Celeste */
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(1, 62, 81, 0.5);
 }
 
-img {
-    object-fit: cover;
-    border-radius: 10px;
-    width: 50%;  
-    height: auto;
-}
 
-@media (max-width: 1024px) {
-    .position-relative {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .overlay-text {
-        margin-left: 0;
-        margin-top: 20px;
-        max-width: 90%;
-    }
-
-    img {
-        width: 80%;  /* Ajuste para pantallas de tamaño mediano */
-    }
-
-    .overlay-text h1 {
-        font-size: 24px;  /* Ajuste de tamaño de fuente en pantallas medianas */
-    }
-
-    .overlay-text p {
-        font-size: 15px;
-    }
-
-    .overlay-text ul li {
-        font-size: 15px;
-    }
-
-    .btn-primary {
-        font-size: 15px;
-        padding: 8px 18px;
-    }
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .position-relative {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0; /* Eliminar el espaciado izquierdo en pantallas pequeñas */
-    }
-
-    img {
-        width: 100%; /* Imagen al 100% del contenedor */
-    }
-
-    .overlay-text {
-        margin-left: 0;
-        margin-top: 20px;
-        max-width: 100%;
-        padding: 20px;
-    }
-
-    .overlay-text h1 {
-        font-size: 22px;
-    }
-
-    .overlay-text p {
-        font-size: 14px;
-    }
-
-    .overlay-text ul li {
-        font-size: 14px;
-    }
-
-    .btn-primary {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .overlay-text h1 {
-        font-size: 20px;
-    }
-
-    .overlay-text p {
-        font-size: 12px;
-    }
-
-    .overlay-text ul li {
-        font-size: 13px;
-    }
-
-    .btn-primary {
-        font-size: 13px;
-        padding: 6px 12px;
-    }
-}
-.img-unica{
-    width: 100%;
-}
-
-/*Postulaciones */
-
-.section-heading {
+  .d-flex {
+    flex-direction: column; /* Apila la imagen y el texto */
     text-align: center;
-    margin-bottom: 40px;
   }
-  
-  .section-heading h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #f1efef;
+
+  .d-flex img {
+    margin: 0 auto 20px auto;
   }
-  
-  .line-dec {
-    width: 50px;
-    height: 3px;
-    background-color: #007bff;
-    margin: 10px auto;
-  }
-  
-  /* Estilos para las imágenes y texto */
-  .image-post {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 60px;
-  }
-  
-  .image-post .image-container {
-    flex: 1 1 auto;
-    max-width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-post img {
-    max-height: 100%;
-    width: auto;
+
+  .overlay-text {
     max-width: 100%;
-    object-fit: contain;
-    border-radius: 10px;
   }
-  
-  .image-post .text-container {
-    flex: 1 1 auto;
-    max-width: 45%;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .image-post .text-container h4 {
-    font-size: 24px;
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
-  .image-post .text-container p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* Botón personalizado */
-  .white-button {
-    text-align: center;
-  }
-  
-  .white-button a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    background: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .white-button a:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .image-post {
-      flex-direction: column;
-      align-items: center;
-    }
-    .image-post .image-container,
-    .image-post .text-container {
-      flex: 1 1 100%;
-      max-width: 90%;
-      text-align: center;
-    }
-    .image-post img {
-      max-height: 250px;
-    }
-  }
+}
+
+/* Postulaciones*/
+/* Colores corporativos */
+.text-primary {
+  color: #ffffff !important;
+  font-size: 3rem; /* Ajusta el tamaño según necesites */
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+  font-weight: bold; /* Hace el texto más grueso */
+}
+
+
+.text-dark {
+  color: #ffffff !important;
+}
+
+.text-muted {
+  color: #96AFB7 !important;
+}
+
+.btn-primary {
+  background-color: #013E51 !important;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #79C9D8 !important;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(1, 62, 81, 0.5);
+}
+
+/* Línea decorativa */
+.line-dec {
+  width: 50px;
+  height: 4px;
+  background-color: #013E51;
+  margin: 10px auto 20px;
+}
+
+/* Ajuste de Espaciado */
+.row {
+  margin: 0;
+}
+
+.col-lg-5 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.col-lg-7 {
+  padding: 15px;
+}
+
+/**/
+
   
    /* Estilo para las tarjetas */
    .team-card {
